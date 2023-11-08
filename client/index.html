@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certificados</title>
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="./script.js" type="module"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>Certificados</h1>
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container bg3 fullcenter">
+      <form class="login bg5">
+        <img src="./assets/certificados-logo.png" alt="logo" width="80%" />
+        <div class="content">
+          <label for="username"><b>Usuário</b></label>
+          <input type="text" name="username" id="username" />
+          <label for="password"><b>Senha</b></label>
+          <input type="text" name="password" id="password" />
+          <button type="submit" class="button1 c4">ENTRAR</button>
+          <p>
+            Não possui uma conta?<b class="c3"><a href="#"> Inscrever-se</a></b>
+          </p>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>
