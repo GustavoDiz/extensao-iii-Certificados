@@ -1,34 +1,139 @@
+.credt{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500; 
+    color: #6b7280;
+}
 
-.login{
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    padding: 1%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-} 
+#tp_usu{
+    font-size: medium;
+    text-align: center;
+}
 
-.content{
-    margin: 2%;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fcd34d;
+}
+
+.items-center {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-    width: 40%;
     align-items: center;
 }
 
-.content *{
-    font-size: 1em;
+.justify-center {
+    justify-content: center;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.bg-amber-300 {
+    background-color: #fcd34d;
+}
+
+.login {
+    background-color: #e2e8f0;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-red-500 {
+    color: #ff0000;
+}
+
+.block {
+    display: block;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-slate-700 {
+    color: white;
+}
+
+.peer {
+    display: flex;
+}
+
+.p-1 {
+    padding: 0.25rem;
+}
+
+.block input[type="text"],
+.block input[type="password"] {
     width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    color: black;
+    background-color: white;
 }
 
-.content label{
-    font-size: 0.9em;
+.block input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    color: black;
+    background-color: white;
 }
 
-.login input{
-    height: 3vh;
-    font-size: 2.5vh;
-    margin-bottom: 5%;
+.login_button {
+    background-color: #FFD700;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    font-weight: bold;
+    color: white;
+    border: 2px solid #FFC400;
+    margin: 0.5rem;
+    width: 50%;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
+
+.login_button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.inscri_button {
+    color: #FFC400;
+}
+
+#false_account {
+    display: block; 
+    font-size: 1.125rem; 
+    font-weight: 500; 
+    color: #6b7280;
+    margin: 0.25rem;
+  }
