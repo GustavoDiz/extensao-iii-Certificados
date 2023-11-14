@@ -7,13 +7,15 @@
   
   <link rel="stylesheet" href="../../styles/homepag.css">
   <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
-  <script src="../../scripts/homepage.js"></script>
   <script src="../../scripts/listas.js"></script>
+  <script src="../../scripts/criar_curso.js"></script>
+  <link rel="stylesheet" href="../../styles/homepag.css">
+  <link rel="stylesheet" href="../../styles/eventos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <title>Homepage</title>
+  <title>Criar Curso | Certificados</title>
 </head>
 
-<body onload="loadInfo()">
+<body class="bg-yellow-500">
   <div id="root" >
     <nav class="navbar" >
       <div class="logo">
@@ -60,7 +62,7 @@
             </label>
     
             <label for="tema_event" class="block text-sm text-gray-600">Data do Evento</label>
-            <input type="date" id="tema_event" name="tema_event" class="border rounded-md p-2 text-sm mt-1">
+            <input type="date" id="date" name="tema_event" class="border rounded-md p-2 text-sm mt-1">
 
             </br>
     
@@ -74,6 +76,7 @@
                 <input type="url" id="link_event" name="link_event" class="border rounded-md p-2 text-sm mt-1">
             </label>
             
+            <button class="signevent_button" onclick="create()">CRIAR</button>
         </div>
     </nav>
 </body>

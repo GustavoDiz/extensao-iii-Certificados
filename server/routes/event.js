@@ -5,6 +5,7 @@ const {
   subscribe,
   getEvents,
   getEventById,
+  createEvent,
 } = require("../controllers/eventController");
 
 router.get("/events", async (req, res) => {
@@ -22,6 +23,15 @@ router.post("/subscribe", async (req, res) => {
     res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Erro ao realizar a inscrição" });
+  }
+});
+
+router.post('/event',async (req, res) => {
+  try {
+    const result = await createEvent(req.body);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao realizar a criação do evento" });
   }
 });
 

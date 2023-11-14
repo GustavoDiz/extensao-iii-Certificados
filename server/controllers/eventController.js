@@ -1,7 +1,10 @@
 const supabase = require("../supabase");
 
 async function getEventById(id) {
-  const { data, error } = await supabase.from("palestra").select("*").eq("id", id);
+  const { data, error } = await supabase
+    .from("palestra")
+    .select("*")
+    .eq("id", id);
   if (!error) {
     return { sucess: true, user: data[0] };
   } else {
@@ -22,13 +25,10 @@ async function subscribe(sub) {
   if (sub != null) {
     const { data, error } = await supabase
       .from("subscribe")
-      .insert(
-        {
-          user: sub.user,
-          palestra: sub.palestra,
-          
-        },
-      )
+      .insert({
+        user: sub.user,
+        palestra: sub.palestra,
+      })
       .select();
     if (!error) {
       return { success: true, data: data };
@@ -40,4 +40,29 @@ async function subscribe(sub) {
   }
 }
 
-module.exports = { subscribe, getEvents, getEventById };
+async function createEvent(event) {
+  if (event != null) {
+    const { data, error } = await supabase
+      .from("palestra")
+      .insert({
+        title: event.title,
+        desc: event.desc,
+        date: event.date,
+        id_creator: event.id_creator,
+        theme: event.theme,
+        creator_name: event.creator_name,
+        link: event.link,
+        rating: event.rating,
+      })
+      .select();
+    if (!error) {
+      return {success: true, data: data};
+    } else {
+      return {success: true, message: "Erro ao criar o evento"};
+    }
+  } else {
+    throw error;
+  }
+}
+
+module.exports = { subscribe, getEvents, getEventById, createEvent };
