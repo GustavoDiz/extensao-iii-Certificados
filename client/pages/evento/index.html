@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evento | Certificados</title>
-    <link rel="stylesheet" href="../../styles/homepag.css">
-    <link rel="stylesheet" href="../../styles/eventos.css">
+    <link rel="stylesheet" href="../../styles/homepag.css" />
+    <link rel="stylesheet" href="../../styles/eventos.css" />
     <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
     <script src="../../scripts/navbar.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-
-</head>
-<body onload="loadInfo()">
+    <script src="../../scripts/evento.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body onload="loadInfo()">
     <div id="root">
-        <nav class="navbar">
-          <div class="logo">
-            <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="../homepage/homepag.html">Home</a></li>
-            <li><a href="../homepage/homeall.html">Eventos</a></li>
-            <li><a href="../certificados/certificados.html">Certificados</a></li>
-          </ul>
-          <ul id="menu-acordeon">
-            <li>
-              Seja bem-vindo, <p id="name"></p><span class="menu-overlay">Clique aqui</span>
-              <ul class="sublista">
-                <br>
-                <a href="../perfil/">
-                  <li>Ver perfil</li>
-                </a>
-                <a href="">
-                  <li>Ver inscrições</li>
-                </a>
-                <a href="../../index.html">
-                  <span class="sair-overlay">
-                    <li>Sair</li>
-                  </span>
-                </a>
-                </br>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
-        <nav>
-          <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem2">
-          <div class="evento-info">
-            <h2 id="title"></h2>
-            <div class="flex">
-                <p id="date"></p>
-                <p id="author"></p>
-            </div>
-            <p id="theme"></p>            
-            <p id="link"></p>
-            <button class = "signevent_button"id="signevent_button" class="inscrever-btn" onclick="subscribe()">Inscrever-se</button>
-          </div>
-        </nav>
-        
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../homepage/homepag.html"
+            ><img src="../../assets/certificados-logo.png" alt="logo"
+          /></a>
         </div>
-        <br></br>
-      </div>
-      <!-- NAVBAR -->
-      <script>
-        var ob = localStorage.getItem("user");
-        let name = JSON.parse(ob).name;
-        document.getElementById("name").innerText = name;
-      </script>
-</body>
+        <ul class="nav-links">
+          <li><a href="../homepage/homepag.html">Home</a></li>
+          <li><a href="../homepage/homeall.html">Eventos</a></li>
+          <li><a href="../certificados/certificados.html">Certificados</a></li>
+        </ul>
+        <ul id="menu-acordeon">
+          <li>
+            Seja bem-vindo,
+            <p id="name"></p>
+            <span class="menu-overlay">Clique aqui</span>
+            <ul class="sublista">
+              <br />
+              <a href="../perfil/">
+                <li>Ver perfil</li>
+              </a>
+              <a href="">
+                <li>Ver inscrições</li>
+              </a>
+              <a href="../../index.html">
+                <span class="sair-overlay">
+                  <li>Sair</li>
+                </span>
+              </a>
+              <br />
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <nav>
+        <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem2" />
+        <div class="evento-info">
+          <h2 id="title"></h2>
+          <div class="flex">
+            <p id="date"></p>
+            <p id="author"></p>
+          </div>
+          <p id="theme"></p>
+          <p id="link"></p>
+          <button
+            class="signevent_button"
+            id="signevent_button"
+            class="inscrever-btn"
+            onclick="subscribe()"
+          >
+            Inscrever-se
+          </button>
+        </div>
+      </nav>
+      <br />
+    </div>
+    <!-- NAVBAR -->
+    <script>
+      var ob = localStorage.getItem("user");
+      let name = JSON.parse(ob).name;
+      document.getElementById("name").innerText = name;
+    </script>
+  </body>
 </html>

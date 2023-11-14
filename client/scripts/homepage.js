@@ -5,8 +5,6 @@ async function loadInfo() {
   let name = JSON.parse(ob).name;
   let events = [];
   let eventCarousel = document.getElementById("events");
-  console.log(name);
-  document.getElementById("name").innerText = name;
 
   await fetch("http://localhost:5000/api/events", {
     method: "GET",
@@ -16,6 +14,7 @@ async function loadInfo() {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       events = data.events;
     })
     .catch((error) => console.log("Erro:", error));

@@ -13,7 +13,7 @@
   <title>Homepage</title>
 </head>
 
-<body>
+<body onload="loadInfo()">
   <div id="root" >
     <nav class="navbar" >
       <div class="logo">
@@ -52,46 +52,8 @@
       </h1>
     </nav>
     <br></br>
-    <nav class="bg-gray-800 p-5">
-      <h1 class="text-white text-center text-2xl font-bold">
-        <span class="menu-overlay">Aqui está todos os eventos</span>
-      </h1>
-      <br></br>
-      <a href="../eventos/admin_event.html">
-        <div id = "galeria" class="item hidden" data-mensagem="Evento do admin" data-data="29/07/2024">
-          <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem">
-          <div class="mensagem" id="mensagem"></div>
-          <div class="data" id="data"></div>
-        </div>
-      </a>
-      <a href="../eventos/conferencia_tecnologia.html">
-        <div id="galeria" class="item hidden" data-mensagem="Conferência de tecnologia" data-data="29/12/2023">
-          <img src="../../assets/6893208.png" alt="Imagem 2" class="imagem">
-          <div class="mensagem" id="mensagem"></div>
-          <div class="data" id="data"></div>
-        </div>
-      </a>
-      <a href="../eventos/techconnect_event.html">
-        <div id ="galeria" class="item hidden" data-mensagem="Evento TechConnect" data-data="29/12/2023">
-          <img src="../../assets/6893208.png" alt="Imagem 3" class="imagem">
-          <div class="mensagem" id="mensagem"></div>
-          <div class="data" id="data"></div>
-        </div>
-      </a>
-      <a href="../eventos/susambi.html">
-        <div id ="galeria" class="item hidden" data-mensagem="Sustentabilidade Ambiental" data-data="29/12/2023">
-          <img src="../../assets/6893208.png" alt="Imagem 4" class="imagem">
-          <div class="mensagem" id="mensagem"></div>
-          <div class="data" id="data"></div>
-        </div>
-      </a>
-      <a href="../eventos/techXpo_event.html">
-        <div id="galeria" class="item hidden" data-mensagem="TechXpo 2025" data-data="29/07/2024">
-          <img src="../../assets/6893208.png" alt="Imagem 5" class="imagem">
-          <div class="mensagem" id="mensagem"></div>
-          <div class="data" id="data"></div>
-        </div>
-      </a>
+    <div id="events">
+    </div>
   </div>
       <div id="botoes" class="text-center mt-4">
         <button id="anterior"><</button>
@@ -99,4 +61,9 @@
       </div>
     </nav>
   </div>
+  <script>
+    var ob = localStorage.getItem("user");
+    let name = JSON.parse(ob).name;
+    document.getElementById("name").innerText = name;
+  </script>
 </body>
