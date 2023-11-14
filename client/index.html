@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
+    <script src="./scripts/login.js"></script>
     <title>Login</title>
 </head>
 
@@ -12,19 +13,19 @@
     <div class="items-center justify-center h-screen bg-amber-300 flex">
         <div class="login bg-slate-200 flex flex-col items-center p-4 rounded-lg shadow-lg">
             <img src="assets/certificados-logo.png" alt="logo" width="500">
-            <form class="items-center justify-center flex flex-col" onsubmit="handleLogin(event)">
+            <div class="items-center justify-center flex flex-col">
                 <p id="error" class="text-red-500"></p>
                 <label class="block m-1">
                     <span class="credt">Username</span>
-                    <input type="text" class="peer p-1" placeholder="Admin" onchange="setUsername(event.target.value)" required>
+                    <input type="text" class="peer p-1" placeholder="Admin" required id="username">
                 </label>
                 <label class="block m-1">
                     <br><span class="credt">Senha</span></br>
-                    <input type="password" class="peer p-1" placeholder="Admin1234" onchange="setPassword(event.target.value)">
+                    <input type="password" class="peer p-1" placeholder="Admin1234" required id="password">
                 </label>
-                <button type="submit" class="login_button">ENTRAR</button>
+                <button type="submit" class="login_button" onclick="handleLogin()">ENTRAR</button>
                 <p id="false_account">Não possui uma conta? <a href="pages/registrar/signup.html" class="inscri_button">Inscrever-se</a></p>
-            </form>
+            </div>
         </div>
     </div>
 </body>
