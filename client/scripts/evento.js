@@ -1,5 +1,6 @@
+let info = {};
+
 async function loadInfo() {
-  let info = {};
   const urlParams = new URLSearchParams(window.location.search);
   let id = urlParams.get("id");
   await fetch(`http://localhost:5000/api/events/${id}`, {
@@ -20,4 +21,22 @@ async function loadInfo() {
     document.getElementById('author').innerText = info.creator_name;
     document.getElementById('theme').innerText = info.theme;
     document.getElementById('link').innerText = info.link;
+}
+
+async function subscribe(){
+    let idUser = JSON.parse(localStorage.getItem('user')).id;
+    await fetch('http://localhost:5000/api/subscribe',{
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+          },
+        body: JSON.stringify({
+            user: idUser,
+            palestra: info.id
+        })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
 }

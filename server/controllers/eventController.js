@@ -22,12 +22,12 @@ async function subscribe(sub) {
   if (sub != null) {
     const { data, error } = await supabase
       .from("subscribe")
-      .insert([
+      .insert(
         {
           user: sub.user,
           palestra: sub.palestra,
         },
-      ])
+      )
       .select();
     if (!error) {
       return { success: true };

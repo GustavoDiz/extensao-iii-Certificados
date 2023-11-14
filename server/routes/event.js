@@ -6,7 +6,6 @@ const {
   getEvents,
   getEventById,
 } = require("../controllers/eventController");
-const { route } = require("./user");
 
 router.get("/events", async (req, res) => {
   try {

@@ -21,7 +21,7 @@ async function handleLogin() {
         //SALVAR O OBJETO USUARIO LOGADO
         localStorage.setItem("user", JSON.stringify(user));
         //IR PARA PAGINA HOMEPAGE
-        document.location.href = 'http://192.168.100.64:5500/client/pages/homepage/homeall.html';
+        document.location.href = './pages/homepage/homeall.html';
       }
     })
     .catch((error) => console.error("Erro:", error));

@@ -6,7 +6,7 @@ async function getUserCertificates(id) {
     .select("*")
     .eq('user',id);
     if(!error){
-        return {sucess: true, certificates: data};
+        return {sucess: true, certificates: certificates};
     }else{
         return {sucess: false, message: "Error ao Encontrar os Certificados"};
     }
