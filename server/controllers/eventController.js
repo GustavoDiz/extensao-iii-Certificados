@@ -26,11 +26,12 @@ async function subscribe(sub) {
         {
           user: sub.user,
           palestra: sub.palestra,
+          
         },
       )
       .select();
     if (!error) {
-      return { success: true };
+      return { success: true, data: data };
     } else {
       return { success: false, message: "Erro ao se inscrever" };
     }
