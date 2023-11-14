@@ -9,7 +9,6 @@
   <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
   <script src="../../scripts/homepage.js"></script>
   <script src="../../scripts/listas.js"></script>
-  <script src="../../scripts/navbar.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <title>Homepage</title>
 </head>
@@ -18,7 +17,7 @@
   <div id="root" >
     <nav class="navbar" >
       <div class="logo">
-        <img src="../../assets/certificados-logo.png" alt="logo">
+        <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
       </div>
       <ul class="nav-links">
         <li><a href="../homepage/homepag.html">Home</a></li>
@@ -58,12 +57,45 @@
         <span class="menu-overlay">Aqui está todos os eventos</span>
       </h1>
       <br></br>
-      <div id="events">
-      </div>
-      </div>
+      <a href="../eventos/admin_event.html">
+        <div id = "galeria" class="item hidden" data-mensagem="Evento do admin" data-data="29/07/2024">
+          <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem">
+          <div class="mensagem" id="mensagem"></div>
+          <div class="data" id="data"></div>
+        </div>
+      </a>
+      <a href="../eventos/conferencia_tecnologia.html">
+        <div id="galeria" class="item hidden" data-mensagem="Conferência de tecnologia" data-data="29/12/2023">
+          <img src="../../assets/6893208.png" alt="Imagem 2" class="imagem">
+          <div class="mensagem" id="mensagem"></div>
+          <div class="data" id="data"></div>
+        </div>
+      </a>
+      <a href="../eventos/techconnect_event.html">
+        <div id ="galeria" class="item hidden" data-mensagem="Evento TechConnect" data-data="29/12/2023">
+          <img src="../../assets/6893208.png" alt="Imagem 3" class="imagem">
+          <div class="mensagem" id="mensagem"></div>
+          <div class="data" id="data"></div>
+        </div>
+      </a>
+      <a href="../eventos/susambi.html">
+        <div id ="galeria" class="item hidden" data-mensagem="Sustentabilidade Ambiental" data-data="29/12/2023">
+          <img src="../../assets/6893208.png" alt="Imagem 4" class="imagem">
+          <div class="mensagem" id="mensagem"></div>
+          <div class="data" id="data"></div>
+        </div>
+      </a>
+      <a href="../eventos/techXpo_event.html">
+        <div id="galeria" class="item hidden" data-mensagem="TechXpo 2025" data-data="29/07/2024">
+          <img src="../../assets/6893208.png" alt="Imagem 5" class="imagem">
+          <div class="mensagem" id="mensagem"></div>
+          <div class="data" id="data"></div>
+        </div>
+      </a>
+  </div>
       <div id="botoes" class="text-center mt-4">
-        <button id="anterior">Anterior</button>
-        <button id="proximo">Proximo</button>
+        <button id="anterior"><</button>
+        <button id="proximo">></button>
       </div>
     </nav>
   </div>

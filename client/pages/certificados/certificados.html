@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../../styles/homepag.css">
   <link rel="stylesheet" href="../../styles/eventos.css">
   <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
-  <script src="../../scripts/listas.js"></script>
   <script src="../../scripts/navbar.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
@@ -16,39 +15,38 @@
 
 <body>
   <div id="root">
-
-    <nav class="navbar">
-      <div class="logo">
-        <img src="../../assets/certificados-logo.png" alt="logo">
-      </div>
-      <ul class="nav-links">
-        <li><a href="../homepage/homepag.html">Home</a></li>
-        <li><a href="../homepage/homeall.html">Eventos</a></li>
-        <li><a href="../certificados/certificados.html">Certificados</a></li>
-      </ul>
-      <ul id="menu-acordeon">
-        <li>
-          Seja bem-vindo, <span class="menu-overlay">Clique aqui</span>
-          <ul class="sublista">
-            <br>
-            <a href="">
-              <li>Ver perfil</li>
-            </a>
-            <a href="">
-              <li>Ver inscrições</li>
-            </a>
-            <a href="../../index.html">
-              <span class="sair-overlay">
-                <a href="../../index.html">
-                    <li>Sair</li>
-                </a>
-              </span>
-            </a>
-            </br>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <div id="root">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../homepage/homepag.html">Home</a></li>
+          <li><a href="../homepage/homeall.html">Eventos</a></li>
+          <li><a href="../certificados/certificados.html">Certificados</a></li>
+        </ul>
+        <ul id="menu-acordeon">
+          <li>
+            Seja bem-vindo, <span class="menu-overlay">Clique aqui</span>
+            <ul class="sublista">
+              <br>
+              <a href="">
+                <li>Ver perfil</li>
+              </a>
+              <a href="">
+                <li>Ver inscrições</li>
+              </a>
+              <a href="../../index.html">
+                <span class="sair-overlay">
+                  <li>Sair</li>
+                </span>
+              </a>
+              </br>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <nav>
     <br></br>
     <nav class="bg-gray-800 p-5">
       <h1 class="text-white text-center text-2xl font-bold">
