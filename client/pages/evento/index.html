@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evento | Certificados</title>
     <link rel="stylesheet" href="../../styles/homepag.css">
+    <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
   <link rel="stylesheet" href="../../styles/eventos.css">
+  <script src="../../scripts/eventos.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="../../scripts/evento.js"></script>
 </head>
-<body>
+<body onload="loadInfo()">
     <div id="root">
         <nav class="navbar">
           <div class="logo">
@@ -21,7 +24,7 @@
           </ul>
           <ul id="menu-acordeon">
             <li>
-              Seja bem-vindo, <span class="menu-overlay">Clique aqui</span>
+              Seja bem-vindo, <p id="name"></p><span class="menu-overlay">Clique aqui</span>
               <ul class="sublista">
                 <br>
                 <a href="">
@@ -40,12 +43,13 @@
             </li>
           </ul>
         </nav>
+
         <nav>
           <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem2">
           <div class="evento-info">
-            <h2 id="Title"></h2>
+            <h2 id="title"></h2>
             <div class="flex">
-                <p id="date">29/12/2023</p>
+                <p id="date"></p>
                 <p id="author"></p>
             </div>
             <p id="theme"></p>            
@@ -57,5 +61,11 @@
         </div>
         <br></br>
       </div>
+      <!-- NAVBAR -->
+      <script>
+        var ob = localStorage.getItem("user");
+        let name = JSON.parse(ob).name;
+        document.getElementById("name").innerText = name;
+      </script>
 </body>
 </html>
