@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../../styles/homepag.css">
+  <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
+  <script src="../../scripts/homepage.js"></script>
+  <script src="../../scripts/listas.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <title>Homepage</title>
+</head>
+
+<body onload="loadInfo()">
+  <div id="root" >
+    <nav class="navbar" >
+      <div class="logo">
+        <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../homepage/homepag.html">Home</a></li>
+        <li><a href="../homepage/homeall.html">Eventos</a></li>
+        <li><a href="../certificados/certificados.html">Certificados</a></li>
+      </ul>
+      <ul id="menu-acordeon">
+        <li>
+          Seja bem-vindo, <p id="name"></p> <span class="menu-overlay">Clique aqui</span>
+          <ul class="sublista">
+            <br>
+            <a href="../perfil/">
+              <li>Ver perfil</li>
+            </a>
+            <a href="../../index.html">
+              <span class="sair-overlay">
+                <li>Sair</li>
+              </span>
+            </a>
+            </br>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <br></br>
+
+    <nav class="bg-blue-50 text-center font-bold text-2xl rounded-lg shadow-lg relative justify-between mx-auto max-w-screen-md p-4">
+        <h1>CRIAR EVENTO</h1>
+    
+        <div class="my-4">
+    
+            <span class="text-sm">Nome do Evento</span>
+            <label class="block m-1">
+                <input type="text" id="nm_event" name="nm_event" class="border rounded-md p-2 text-sm mt-1">
+            </label>
+    
+            <span class="text-sm">Descrição</span>
+            <label class="block m-1">
+                <textarea id="desct_event" name="desct_event" class="border rounded-md p-2 text-sm mt-1"></textarea>
+            </label>
+    
+            <label for="tema_event" class="block text-sm text-gray-600">Data do Evento</label>
+            <input type="date" id="tema_event" name="tema_event" class="border rounded-md p-2 text-sm mt-1">
+
+            </br>
+    
+            <span class="text-sm">Tema</span>
+            <label class="block m-1">
+                <input type="text" id="tema_event" name="tema_event" class="border rounded-md p-2 text-sm mt-1">
+            </label>
+    
+            <span class="text-sm">Link da Live</span>
+            <label class="block m-1">
+                <input type="url" id="link_event" name="link_event" class="border rounded-md p-2 text-sm mt-1">
+            </label>
+            
+        </div>
+    </nav>
+</body>
+    <script>
+        var ob = localStorage.getItem("user");
+        let name = JSON.parse(ob).name;
+        document.getElementById("name").innerText = name;
+      </script>
