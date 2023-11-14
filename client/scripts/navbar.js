@@ -11,5 +11,4 @@ function setupAcordeon() {
 
   document.addEventListener("DOMContentLoaded", function () {
     setupAcordeon();
-    setupimg();
   });
