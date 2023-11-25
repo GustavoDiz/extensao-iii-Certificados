@@ -19,7 +19,7 @@ async function loadInfo() {
       document.getElementById(
         "certificates"
       ).innerHTML += `<nav class="bg-yellow-500">
-            <p class="text-white text-center text-2xl font-bold">
+            <p class="text-white text-center text-2xl font-bold bs-1">
               <span>
                 ${e.name}
                 <button
@@ -27,7 +27,7 @@ async function loadInfo() {
                 id="getcert_button"
                 class="getcert_button"
               >
-                Inscrever-se
+                Emitir
               </button>
               </span>
             </p>

@@ -1,0 +1,30 @@
+.label{
+    font-weight: bolder;
+    color: #fcd34d;
+}
+
+#profile{
+    border: 5px solid #fcd34d;
+    border-radius: 100px;
+}
+
+.p-content{
+    
+}
+
+.div-flex{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+    width: 40%;
+    margin: 20px auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.content{
+    width: 40%;
+}

@@ -22,6 +22,7 @@ form {
   }
 
   .sign_button {
+    font-size: 1.1em;
     background-color: #FFD700;
     border-radius: 0.25rem;
     padding: 0.25rem;
@@ -29,7 +30,6 @@ form {
     color: white;
     border: 2px solid #FFC400;
     margin: 0.5rem;
-    width: 50%;
     transition: box-shadow 0.3s, transform 0.3s;
 }
 

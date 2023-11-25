@@ -19,8 +19,8 @@ async function loadInfo() {
     })
     .catch((error) => console.log("Erro:", error));
 
-  if (events.length > 0){
-    let htmlString = '';
+  if (events.length > 0) {
+    let htmlString = "";
     for (let index = 0; index < events.length; index++) {
       htmlString += `
         <a href="../evento/index.html?id=${events[index].id}">
@@ -31,8 +31,15 @@ async function loadInfo() {
             data-data="29/07/2024"
           >
             <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem" />
-            <div class="mensagem" id="mensagem"><p>${events[index].title}</p></div>
-            <div class="data" id="data">${events[index].date}</div>
+            <div class="data" id="data" class="content-c">
+            <p class="mensagem" id="mensagem"> ${events[index].title}</p>
+            <p id="date">
+            ${formatdate(events[index].date)}
+            </p>
+            <p id="theme">
+            ${events[index].theme}
+            </p>
+            </div>
           </div>
         </a>`;
     }
@@ -41,52 +48,62 @@ async function loadInfo() {
   }
 }
 
+function formatdate(data) {
+  const dataObj = new Date(data);
+  const dia = String(dataObj.getDate()).padStart(2, "0");
+  const mes = String(dataObj.getMonth() + 1).padStart(2, "0"); // O mês começa do zero
+  const ano = dataObj.getFullYear();
+
+  const dataFormatada = `${dia}/${mes}/${ano}`;
+  return dataFormatada;
+}
+
 function setupCarousel() {
-    var imagens = $(".item");
-    var indexAtual = 0;
-    var intervalId;
+  var imagens = $(".item");
+  var indexAtual = 0;
+  var intervalId;
 
-    function mostrarImagem(index) {
-      imagens.hide();
-      imagens.eq(index).fadeIn();
-    }
-
-    function avancarImagem() {
-      indexAtual++;
-      if (indexAtual >= imagens.length) {
-        indexAtual = 0;
-      }
-      mostrarImagem(indexAtual);
-    }
-
-    function retrocederImagem() {
-      indexAtual--;
-      if (indexAtual < 0) {
-        indexAtual = imagens.length - 1;
-      }
-      mostrarImagem(indexAtual);
-    }
-
-    // Ocultar as imagens no início
+  function mostrarImagem(index) {
     imagens.hide();
-
-    $("#anterior").click(function () {
-      clearInterval(intervalId); 
-      retrocederImagem();
-      iniciarIntervalo(); 
-    });
-
-    $("#proximo").click(function () {
-      clearInterval(intervalId); 
-      avancarImagem();
-      iniciarIntervalo(); 
-    });
-
-    function iniciarIntervalo() {
-      intervalId = setInterval(avancarImagem, 3000); 
-    }
-
-    iniciarIntervalo(); 
+    imagens.eq(index).fadeIn();
   }
+
+  function avancarImagem() {
+    indexAtual++;
+    if (indexAtual >= imagens.length) {
+      indexAtual = 0;
+    }
+    mostrarImagem(indexAtual);
+  }
+
+  function retrocederImagem() {
+    indexAtual--;
+    if (indexAtual < 0) {
+      indexAtual = imagens.length - 1;
+    }
+    mostrarImagem(indexAtual);
+  }
+
+  // Ocultar as imagens no início
+  imagens.hide();
+
+  $("#anterior").click(function () {
+    clearInterval(intervalId);
+    retrocederImagem();
+    iniciarIntervalo();
+  });
+
+  $("#proximo").click(function () {
+    clearInterval(intervalId);
+    avancarImagem();
+    iniciarIntervalo();
+  });
+
+  function iniciarIntervalo() {
+    intervalId = setInterval(avancarImagem, 3000);
+  }
+
+  iniciarIntervalo();
+}
 
 window.onload = loadInfo;

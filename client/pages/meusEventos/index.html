@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/homepag.css">
+    <link rel="stylesheet" href="../../styles/eventos.css">
+    <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../scripts/navbar.js"></script>
+    <script src="../../scripts/evento.js"></script>
+    <script src="../../scripts/meu_eventos.js"></script>
+    <title>Meus Eventos | Certificados</title>
+    <link rel="icon" type="image/png" href="../../assets/icon.png">
+</head>
+<body onload="loadEvents()">
+    <div id="root">
+        <nav class="navbar">
+            <div class="logo">
+              <img src="../../assets/certificados-logo.png" alt="logo" />
+            </div>
+            <ul class="nav-links">
+              <li><a href="../homepage/homepag.html">Home</a></li>
+              <li><a href="../homepage/homeall.html">Eventos</a></li>
+              <li><a href="../certificados/certificados.html">Certificados</a></li>
+            </ul>
+            <ul id="menu-acordeon">
+              <li>
+                Seja bem-vindo,<p id="name"></p> <span class="menu-overlay">▼</span>
+                <ul class="sublista">
+                  <br />
+                  <a href="../perfil/">
+                    <li>Ver perfil</li>
+                  </a>
+                  <a id='myevents'>
+                    <li>Meus Eventos</li>
+                  </a>
+                  <a href="../../index.html">
+                    <span class="sair-overlay">
+                      <a href="../../index.html">
+                        <li>Sair</li>
+                      </a>
+                    </span>
+                  </a>
+                  <br />
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="myevents" id="myevents">
+
+          </div>
+    </div>
+    <!-- NAVBAR -->
+    <script>
+      var ob = localStorage.getItem("user");
+      document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
+      let name = JSON.parse(ob).name;
+      document.getElementById("name").innerText = name;
+    </script>
+</body>
+</html>

@@ -11,41 +11,42 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
-
+    <link rel="icon" type="image/png" href="../../assets/icon.png" />
     <title>Homepage | Certificados</title>
   </head>
 
   <body onload="loadInfo()">
     <div id="root">
-      <nav class="navbar">
+      <div class="navbar" >
         <div class="logo">
-          <a href="../homepage/homepag.html"
-            ><img src="../../assets/certificados-logo.png" alt="logo"
-          /></a>
+          <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
         </div>
         <ul class="nav-links">
-          <li><a href="../homepage/homepag.html">Home</a></li>
+          <li><a href="../homepage/homepag.html">Início</a></li>
           <li><a href="../homepage/homeall.html">Eventos</a></li>
           <li><a href="../certificados/certificados.html">Certificados</a></li>
         </ul>
         <ul id="menu-acordeon">
           <li>
-            Seja bem-vindo,<p id="name"></p> <span class="menu-overlay">Clique aqui</span>
+            Seja bem-vindo, <span id="name"></span> <span class="menu-overlay">▼</span>
             <ul class="sublista">
-              <br />
+              <br>
               <a href="../perfil/">
                 <li>Ver perfil</li>
+              </a>
+              <a id='myevents'>
+                <li>Meus Eventos</li>
               </a>
               <a href="../../index.html">
                 <span class="sair-overlay">
                   <li>Sair</li>
                 </span>
               </a>
-              <br />
+              </br>
             </ul>
           </li>
         </ul>
-      </nav>
+      </div>
       <br />
       <nav class="bg-gray-800 p-5">
         <h1 class="text-white text-center text-2xl font-bold">
@@ -59,16 +60,17 @@
         <h1 class="text-white text-center text-2xl font-bold">
           <span class="menu-overlay">Eventos em destaque!</span>
         </h1>
-        <br />
-        <div id="events"></div>
-        <div id="botoes" class="text-center mt-4">
-          <button id="anterior"><</button>
-          <button id="proximo">></button>
+        <br>
+        <div id="carrossel">
+          <button id="anterior" class="btn-c"><</button>
+          <div id="events"></div>
+          <button id="proximo" class="btn-c">></button>
         </div>
       </nav>
     </div>
     <script>
       var ob = localStorage.getItem("user");
+      document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
       let name = JSON.parse(ob).name;
       document.getElementById("name").innerText = name;
     </script>

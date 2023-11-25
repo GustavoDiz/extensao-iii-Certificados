@@ -11,6 +11,7 @@
   <script src="../../scripts/eventos.js"></script>
   <script src="../../scripts/listas.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="icon" type="image/png" href="../../assets/icon.png">
   <title>Eventos | Certificados</title>
 </head>
 
@@ -27,11 +28,14 @@
       </ul>
       <ul id="menu-acordeon">
         <li>
-          Seja bem-vindo, <p id="name"></p> <span class="menu-overlay">Clique aqui</span>
+          Seja bem-vindo, <span id="name"></span> <span class="menu-overlay">▼</span>
           <ul class="sublista">
             <br>
             <a href="../perfil/">
               <li>Ver perfil</li>
+            </a>
+            <a id='myevents'>
+              <li>Meus Eventos</li>
             </a>
             <a href="../../index.html">
               <span class="sair-overlay">
@@ -50,7 +54,7 @@
       </h1>
     </nav>
 
-    <nav class="font-bold text-white bg-yellow-500 items-center p-4 rounded-lg shadow-lg relative">
+    <nav class="font-bold text-white bg1 items-center p-4 shadow-lg relative">
       <a href="../curso/criar_curso.html">
         <h1 class="text-white text-center bg-gray-800 p-4 font-bold items-center p-4 rounded-lg shadow-lg">CRIAR EVENTO</h1>
       </a>
@@ -61,6 +65,7 @@
   </nav>
   <script>
     var ob = localStorage.getItem("user");
+    document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
     let name = JSON.parse(ob).name;
     document.getElementById("name").innerText = name;
   </script>

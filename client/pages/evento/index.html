@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
+    <link rel="icon" type="image/png" href="../../assets/icon.png" />
   </head>
   <body onload="loadInfo()">
     <div id="root">
@@ -31,11 +32,14 @@
           <li>
             Seja bem-vindo,
             <p id="name"></p>
-            <span class="menu-overlay">Clique aqui</span>
+            <span class="menu-overlay">▼</span>
             <ul class="sublista">
               <br />
               <a href="../perfil/">
                 <li>Ver perfil</li>
+              </a>
+              <a id='myevents'>
+                <li>Meus Eventos</li>
               </a>
               <a href="../../index.html">
                 <span class="sair-overlay">
@@ -73,6 +77,7 @@
     <!-- NAVBAR -->
     <script>
       var ob = localStorage.getItem("user");
+      document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
       let name = JSON.parse(ob).name;
       document.getElementById("name").innerText = name;
     </script>

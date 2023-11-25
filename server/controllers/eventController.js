@@ -56,13 +56,30 @@ async function createEvent(event) {
       })
       .select();
     if (!error) {
-      return {success: true, data: data};
+      return { success: true, data: data };
     } else {
-      return {success: true, message: "Erro ao criar o evento"};
+      return { success: true, message: "Erro ao criar o evento" };
     }
   } else {
     throw error;
   }
 }
 
-module.exports = { subscribe, getEvents, getEventById, createEvent };
+async function getEventsbyUser(id) {
+  if (id != null) {
+    const { data, error } = await supabase
+      .from("palestra")
+      .select("*")
+      .eq("id_creator", id);
+    if (!error) {
+      console.log(data);
+      return { sucess: true, events: data};
+    } else {
+      return { sucess: false, message: "Error ao Encontrar os Eventos" };
+    }
+  } else {
+    throw error;
+  }
+}
+
+module.exports = { subscribe, getEvents, getEventById, createEvent, getEventsbyUser };
