@@ -82,4 +82,28 @@ async function getEventsbyUser(id) {
   }
 }
 
-module.exports = { subscribe, getEvents, getEventById, createEvent, getEventsbyUser };
+async function getEventAdminByUser(id){
+  if(id != null){
+    const { data, error } = await supabase
+      .from("palestra")
+      .select("*")
+      .eq("id", id);
+    if(!error){
+      console.log(data);
+      const {count, error} = await supabase
+      .from('subscribe')
+      .select('*',{count: 'exact'})
+      .eq("palestra",id);
+      console.log(count);
+      if(!error){
+        return { sucess: true, event: data[0],count: count}
+      }
+    }else{
+      return { sucess: false, message: "Error ao Encontrar o Evento"};
+    }
+  }else{
+    throw error;
+  }
+}
+
+module.exports = { subscribe, getEvents, getEventById, createEvent, getEventsbyUser, getEventAdminByUser };

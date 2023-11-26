@@ -8,10 +8,11 @@
     <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
     <script src="../../scripts/navbar.js"></script>
     <script src="../../scripts/evento.js"></script>
+    <script src="../../scripts/editarevento.js"></script>
     <title>Gerenciar Evento | Certificados</title>
     <link rel="icon" type="image/png" href="../../assets/icon.png">
 </head>
-<body>
+<body onload="loadContent()">
     <div id="root">
         <nav class="navbar">
             <div class="logo">
@@ -44,6 +45,23 @@
                 </ul>
               </li>
             </ul>
+          </nav>
+
+          <nav>
+            <img src="../../assets/6893208.png" alt="Imagem 1" class="imagem2" />
+            <div class="evento-info">
+              <h2 id="title"></h2>
+              <div class="flex">
+                <p id="date"></p>
+                <p id="author"></p>
+              </div>
+              <p id="theme"></p>
+              <p id="count"></p>
+              <a id="link" href="#"></a>
+              <button onclick="emitirCertificado()">
+                Emitir Certificados
+              </button>
+            </div>
           </nav>
     </div>
     <script>

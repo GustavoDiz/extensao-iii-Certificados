@@ -20,7 +20,7 @@ async function loadEvents(){
         content.map((event)=>{
             eventos.innerHTML += `<div class="bg-card">
                 <h2>${event.title}</h2>
-                <a href="../evento/index.html?id=${event.id}" id="link"><button class="signevent_button">Gerenciar</button></a>
+                <a href="../editarevento/index.html?id=${event.id}" id="link"><button class="signevent_button">Gerenciar</button></a>
         </div> `;
         })
     }else{
