@@ -1,0 +1,18 @@
+.div-flex{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.bg-card{
+ border: solid #fcd34d 1px;
+}
+
+.div-flex h1{
+    align-self: center;
+}
