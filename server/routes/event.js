@@ -8,6 +8,8 @@ const {
   createEvent,
   getEventsbyUser,
   getEventAdminByUser,
+  getSubscribes,
+  getSubscribeById,
 } = require("../controllers/eventController");
 
 router.get("/events", async (req, res) => {
@@ -16,6 +18,25 @@ router.get("/events", async (req, res) => {
     res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Erro ao achar os eventos" });
+  }
+});
+
+router.get('/subscribe', async(req,res) =>{
+  try{
+    let result = await getSubscribes();
+    res.json(result);
+  }catch(error){
+    res.status(500).json({ error: "Erro ao realizar a inscrição" });
+  }
+});
+
+router.get('/subscribe/:id', async(req,res) =>{
+  try{
+    const id = req.params.id;
+    let result = await getSubscribeById(id);
+    res.json(result);
+  }catch(error){
+    res.status(500).json({ error: error });
   }
 });
 
