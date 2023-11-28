@@ -1,77 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="../../styles/homepag.css">
-  <link rel="stylesheet" href="../../styles/eventos.css">
-  <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
-  <script src="../../scripts/eventos.js"></script>
-  <script src="../../scripts/listas.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link rel="icon" type="image/png" href="../../assets/icon.png">
-  <title>Eventos | Certificados</title>
-</head>
+    <link rel="stylesheet" href="../../styles/homepag.css" />
+    <link rel="stylesheet" href="../../styles/eventos.css" />
+    <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../scripts/eventos.js"></script>
+    <script src="../../scripts/listas.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="icon" type="image/png" href="../../assets/icon.png" />
+    <title>Eventos | Certificados</title>
+  </head>
 
-<body onload="loadInfo()">
-  <div id="root" >
-    <nav class="navbar" >
-      <div class="logo">
-        <a href="../homepage/homepag.html"><img src="../../assets/certificados-logo.png" alt="logo"></a>
+  <body onload="loadInfo()">
+    <div id="root">
+      <div class="navbar">
+        <div class="logo">
+          <a href="../homepage/homepag.html"
+            ><img src="../../assets/certificados-logo.png" alt="logo"
+          /></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../homepage/homepag.html">Home</a></li>
+          <li><a href="../homepage/homeall.html">Eventos</a></li>
+          <li><a href="../certificados/certificados.html">Certificados</a></li>
+        </ul>
+        <ul id="menu-acordeon">
+          <li>
+            Seja bem-vindo, <span id="name"></span>
+            <span class="menu-overlay">▼</span>
+            <ul class="sublista">
+              <br />
+              <a href="../perfil/">
+                <li>Ver perfil</li>
+              </a>
+              <a id="myevents">
+                <li>Meus Eventos</li>
+              </a>
+              <a href="../../index.html">
+                <span class="sair-overlay">
+                  <li>Sair</li>
+                </span>
+              </a>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <ul class="nav-links">
-        <li><a href="../homepage/homepag.html">Home</a></li>
-        <li><a href="../homepage/homeall.html">Eventos</a></li>
-        <li><a href="../certificados/certificados.html">Certificados</a></li>
-      </ul>
-      <ul id="menu-acordeon">
-        <li>
-          Seja bem-vindo, <span id="name"></span> <span class="menu-overlay">▼</span>
-          <ul class="sublista">
-            <br>
-            <a href="../perfil/">
-              <li>Ver perfil</li>
-            </a>
-            <a id='myevents'>
-              <li>Meus Eventos</li>
-            </a>
-            <a href="../../index.html">
-              <span class="sair-overlay">
-                <li>Sair</li>
-              </span>
-            </a>
-            </br>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <br></br>
-    <nav class="bg-gray-800 p-5">
-      <h1 class="text-white text-center text-2xl font-bold">
-        Bem-vindo ao <span class="menu-overlay">Certificados</span>! Aqui você encontra todo nosso conteúdo.
-      </h1>
-    </nav>
+      <nav class="bg-gray-800 p-5">
+        <h1 class="text-white text-center text-2xl font-bold">
+          Bem-vindo ao <span class="menu-overlay">Certificados</span>! Aqui você
+          encontra todo nosso conteúdo.
+        </h1>
+      </nav>
 
-    <nav class="font-bold text-white bg1 items-center p-4 shadow-lg relative">
-      <a href="../curso/criar_curso.html">
-        <h1 class="text-white text-center bg-gray-800 p-4 font-bold items-center p-4 rounded-lg shadow-lg">CRIAR EVENTO</h1>
-      </a>
-      <div class="container mx-auto mt-8 flex flex-wrap justify-center space-x-4" id='eventos'>
-      </div>
-  </nav>
-  </div>
-  </nav>
-  <script>
-var ob = localStorage.getItem("user");
+      <nav class="font-bold text-white bg1 items-center p-4 shadow-lg">
+        <div id="createEvent"></div>
+        <div
+          class="container mx-auto mt-8 flex flex-wrap justify-center space-x-4"
+          id="eventos"
+        ></div>
+      </nav>
+    </div>
+    <script>
+      var ob = localStorage.getItem("user");
       let obJson = JSON.parse(ob);
-      if(obJson.user_type == "creator"){
-        document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
-      }else{
-        document.getElementById("myevents").href = `../minhasInscricoes/?id=${JSON.parse(ob).id}`;
+      if (obJson.user_type == "creator") {
+        document.getElementById("myevents").href = `../meusEventos/?id=${
+          JSON.parse(ob).id
+        }`;
+        document.getElementById(
+          "createEvent"
+        ).innerHTML = `<a href="../curso/criar_curso.html">
+          <h1 class="text-white text-center bg-gray-800 p-4 font-bold items-center p-4 rounded-lg shadow-lg">CRIAR EVENTO</h1>
+        </a>`;
+      } else {
+        document.getElementById("myevents").href = `../minhasInscricoes/?id=${
+          JSON.parse(ob).id
+        }`;
       }
-    let name = JSON.parse(ob).name;
-    document.getElementById("name").innerText = name;
-  </script>
-</body>
+      let name = JSON.parse(ob).name;
+      document.getElementById("name").innerText = name;
+    </script>
+  </body>
+</html>

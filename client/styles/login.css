@@ -1,5 +1,10 @@
+
+*{
+    font-family: Helvetica, sans-serif;
+}
+
 .credt{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    
     font-weight: 500; 
     color: #6b7280;
 }
@@ -15,6 +20,9 @@ body {
     background-image: url(../assets/tilesetyellow.png);
 }
 
+label{
+    margin-bottom: 1em;
+}
 .items-center {
     display: flex;
     align-items: center;
@@ -88,36 +96,31 @@ body {
     padding: 0.25rem;
 }
 
-.block input[type="text"],
-.block input[type="password"] {
+.block input { 
+    all: unset;
+    cursor: text;
+    background-color: #e2e8f0;
+    border-bottom: #6b7280 solid 3px;
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.5rem;
-    border: 1px solid #ccc;
     border-radius: 0.25rem;
     color: black;
-    background-color: white;
 }
 
-.block input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    color: black;
-    background-color: white;
+.block input:focus{
+    border-bottom: #FFC400 solid 3px;
 }
 
 .login_button {
     background-color: #FFD700;
     border-radius: 0.25rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
     font-weight: bold;
     color: white;
     border: 2px solid #FFC400;
     margin: 0.5rem;
-    width: 50%;
+    width: 100%;
     transition: box-shadow 0.3s, transform 0.3s;
 }
 
@@ -127,6 +130,8 @@ body {
 }
 
 .inscri_button {
+    all: unset;
+    cursor: pointer;
     color: #FFC400;
 }
 

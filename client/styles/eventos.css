@@ -1,47 +1,86 @@
 .imagem2 {
-    width: 100%;
-    height: auto; 
-  }
-  
-  .evento-info {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #e2e8f0;
-    border-radius: 10px;
-    text-align: left;
-  }
-  
-  .evento-info h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .evento-info p {
-    margin: 10px 0;
-    font-size: 1rem;
-  }
+  width: 100%;
+  height: auto;
+}
 
-  .signevent_button {
-    background-color: #FFD700;
-    border-radius: 0.25rem;
-    padding: 0.25rem;
-    font-weight: bold;
-    color: #212529;
-    border: 2px solid #FFC400;
-    margin: 0.5rem;
-    width: 300px;
-    transition: box-shadow 0.3s, transform 0.3s;
+.event {
+  width: 70%;
+  margin: 0px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.line{
+  background-color: #ffc400;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.evento-info {
+  padding: 20px;
+  background-color: #e2e8f0;
+  text-align: left;
+}
+
+.evento-info h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.evento-info p {
+  font-size: 1rem;
+}
+
+.signevent_button {
+  background-color: #ffd700;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  font-weight: bold;
+  color: #212529;
+  border: 2px solid #ffc400;
+  margin: 0.5rem;
+  width: 300px;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .signevent_button:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
-.c1{
-  color: #FFC400;
+.c1 {
+  color: #ffc400;
 }
 
-.bg1{
+.bg1 {
   background-image: url(../assets/tilesetyellow.png);
+}
+
+
+.more-detail{
+  font-weight: bold;
+  padding: 5px;
+  gap: 5px;
+  display: flex;
+}
+
+#author{
+  color: #ffc400;
+}
+
+.inscrever-btn{
+  color: #e2e8f0;
+  margin-top: 15px;
+  background-color: #ffc400;
+  font-weight: bold;
+  width: 100%;
+  height: 2em;
+}
+
+a{
+  font-weight: bold;
+  color: #a15600 !important;
+}
+
+#btn-card{
+  align-self: end;
 }
