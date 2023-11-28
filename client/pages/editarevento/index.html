@@ -65,8 +65,13 @@
           </nav>
     </div>
     <script>
-      var ob = localStorage.getItem("user");
-      document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
+var ob = localStorage.getItem("user");
+      let obJson = JSON.parse(ob);
+      if(obJson.user_type == "creator"){
+        document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
+      }else{
+        document.getElementById("myevents").href = `../minhasInscricoes/?id=${JSON.parse(ob).id}`;
+      }
       let name = JSON.parse(ob).name;
       document.getElementById("name").innerText = name;
     </script>

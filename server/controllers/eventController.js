@@ -82,6 +82,28 @@ async function getEventsbyUser(id) {
   }
 }
 
+async function getEventsbySub(id) {
+  if (id != null) {
+    let { data: subscribe, error } = await supabase
+      .from("subscribe")
+      .select(
+        `
+  palestra(
+    *
+  )
+`
+      )
+      .eq("user", id);
+    if (!error) {
+      return { sucess: true, content: subscribe };
+    } else {
+      return { sucess: false, message: "Error ao Encontrar os Eventos" };
+    }
+  } else {
+    throw error;
+  }
+}
+
 async function getEventAdminByUser(id) {
   if (id != null) {
     const { data, error } = await supabase
@@ -152,4 +174,5 @@ module.exports = {
   getEventAdminByUser,
   getSubscribes,
   getSubscribeById,
+  getEventsbySub,
 };

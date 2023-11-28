@@ -7,7 +7,7 @@ async function handleRegister() {
     username: document.getElementById("username").value,
     password: document.getElementById("password").value,
     email: document.getElementById("email").value,
-    user_type: document.getElementById("usertype").value,
+    usertype: document.getElementById("usertype").value,
   };
 
   console.log(register);

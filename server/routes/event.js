@@ -10,6 +10,7 @@ const {
   getEventAdminByUser,
   getSubscribes,
   getSubscribeById,
+  getEventsbySub
 } = require("../controllers/eventController");
 
 router.get("/events", async (req, res) => {
@@ -89,4 +90,15 @@ router.get("/events/myevent/:id", async(req, res)=>{
     res.status(500).json({ error: "Erro ao obter o evento" });
   }
 })
+
+router.get("/events/mysubs/:id",async(req,res) => {
+  try {
+    const id = req.params.id;
+    let result = await getEventsbySub(id);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao obter o evento" });
+  } 
+})
+
 module.exports = router;

@@ -3,20 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil | Certificados</title>
+    <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
     <link rel="stylesheet" href="../../styles/homepag.css" />
     <link rel="stylesheet" href="../../styles/eventos.css" />
-    <link rel="stylesheet" href="../../styles/profile.css" />
-    <script src="../../scripts/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../scripts/listas.js"></script>
-    <script src="../../scripts/perfil.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
+    <link rel="stylesheet" href="../../styles/meuseventos.css" />
+    <script src="../../scripts/navbar.js"></script>
+    <script src="../../scripts/evento.js"></script>
+    <script src="../../scripts/minhas_inscricoes.js"></script>
+    <title>Meus Eventos | Certificados</title>
     <link rel="icon" type="image/png" href="../../assets/icon.png" />
   </head>
-  <body onload="loadInfo()">
+  <body onload="loadSubs()">
     <div id="root">
       <nav class="navbar">
         <div class="logo">
@@ -37,7 +34,7 @@
               <a href="../perfil/">
                 <li>Ver perfil</li>
               </a>
-              <a id='myevents'>
+              <a id="myevents">
                 <li>Meus Eventos</li>
               </a>
               <a href="../../index.html">
@@ -53,36 +50,23 @@
         </ul>
       </nav>
 
-      <div class="div-flex">
-        <img src="" alt="" id="profile" width="200px" />
-        <div class="content">
-          <label>
-            <p class="label">Nome</p>
-            <p id="nome"></p>
-          </label>
-          <label>
-            <p class="label">Tipo de Usuário</p>
-            <p id="usertype"></p>
-          </label>
-          <label>
-            <p class="label">Username</p>
-            <p id="username"></p>
-          </label>
-          <label>
-            <p class="label">Email</p>
-            <p id="email"></p>
-          </label>
-        </div>
+      <div class="content div-flex">
+        <h1>Eventos Inscritos</h1>
+        <div id="events-content"></div>
       </div>
     </div>
-    <!-- NAVBAR -->
+
     <script>
-var ob = localStorage.getItem("user");
+      var ob = localStorage.getItem("user");
       let obJson = JSON.parse(ob);
-      if(obJson.user_type == "creator"){
-        document.getElementById("myevents").href = `../meusEventos/?id=${JSON.parse(ob).id}`;
-      }else{
-        document.getElementById("myevents").href = `../minhasInscricoes/?id=${JSON.parse(ob).id}`;
+      if (obJson.user_type == "creator") {
+        document.getElementById("myevents").href = `../meusEventos/?id=${
+          JSON.parse(ob).id
+        }`;
+      } else {
+        document.getElementById("myevents").href = `../minhasInscricoes/?id=${
+          JSON.parse(ob).id
+        }`;
       }
       let name = JSON.parse(ob).name;
       document.getElementById("name").innerText = name;
