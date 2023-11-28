@@ -84,3 +84,17 @@ a{
 #btn-card{
   align-self: end;
 }
+
+.disabled{
+  opacity: 0.3;
+}
+
+.btn1{
+  background-color: #212529 !important;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.btns{
+  margin: 0 auto;
+}

@@ -13,9 +13,10 @@ const {
   getEventsbySub
 } = require("../controllers/eventController");
 
-router.get("/events", async (req, res) => {
+router.get("/events/:page", async (req, res) => {
   try {
-    let result = await getEvents();
+    const pag = req.params.page;
+    let result = await getEvents(pag);
     res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Erro ao achar os eventos" });

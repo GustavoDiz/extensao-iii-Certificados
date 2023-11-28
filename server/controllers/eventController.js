@@ -1,4 +1,5 @@
 const supabase = require("../supabase");
+const { getPagination } = require("../util/pagination");
 
 async function getEventById(id) {
   const { data, error } = await supabase
@@ -12,10 +13,14 @@ async function getEventById(id) {
   }
 }
 
-async function getEvents() {
-  const { data, error } = await supabase.from("palestra").select("*");
+async function getEvents(pag) {
+  const { from, to} = getPagination(pag,8);
+  const { data, error } = await supabase
+    .from("palestra")
+    .select("*")
+    .range(from, to);
   if (!error) {
-    return { events: data };
+    return { events: data,  };
   } else {
     return { success: false, message: "Erro ao retornar todos os eventos" };
   }
