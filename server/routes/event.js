@@ -60,7 +60,7 @@ router.post("/event", async (req, res) => {
   }
 });
 
-router.get("/events/:id", async (req, res) => {
+router.get("/event/:id", async (req, res) => {
   try {
     const id = req.params.id;
     console.log(id);

@@ -13,7 +13,7 @@ function formatdate(data) {
 async function loadInfo() {
   const urlParams = new URLSearchParams(window.location.search);
   let id = urlParams.get("id");
-  await fetch(`http://localhost:5000/api/events/${id}`, {
+  await fetch(`http://localhost:5000/api/event/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ async function loadInfo() {
     document.getElementById('title').innerText = info.title;
     document.getElementById('date').innerText = formatdate(info.date);
     document.getElementById('author').innerText = info.creator_name;
-    document.getElementById('theme').innerText = info.theme;
+    document.getElementById('theme').innerText = info.desc;
     document.getElementById('link').innerText = info.link;
 }
 

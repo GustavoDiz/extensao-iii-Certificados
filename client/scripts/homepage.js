@@ -6,7 +6,7 @@ async function loadInfo() {
   let events = [];
   let eventCarousel = document.getElementById("events");
 
-  await fetch("http://localhost:5000/api/events", {
+  await fetch(`http://localhost:5000/api/events/${0}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -106,4 +106,3 @@ function setupCarousel() {
   iniciarIntervalo();
 }
 
-window.onload = loadInfo;

@@ -22,6 +22,8 @@ async function handleLogin() {
         localStorage.setItem("user", JSON.stringify(user));
         //IR PARA PAGINA HOMEPAGE
         document.location.href = './pages/homepage/homepag.html';
+      }else{
+        alert('Usuário Não Encontrado!');
       }
     })
     .catch((error) => console.error("Erro:", error));
